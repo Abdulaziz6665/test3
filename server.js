@@ -1,7 +1,7 @@
 const express = require('express')
 const { pg } = require('./pg/pg')
 const bodyParser = require('body-parser')
-// const path = require('path')
+const path = require('path')
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -17,6 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use((req, res, next) => {
 //     res.sendFile(path.join(__dirname, '../client-side', 'build', 'index.html'))
 // })
+
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+      
+    // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+  }
 
 const SQL = `
     select
@@ -105,5 +115,6 @@ app.post('/contacts', async (req, res) => {
             console.log(e.message)
      }
 })
+
 
 app.listen(PORT, () => console.log('server is running ' + PORT))
