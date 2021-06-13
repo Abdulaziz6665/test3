@@ -22,7 +22,7 @@ function Contacts () {
 
             ;(async () => {
     
-                const res = await fetch('http://localhost:5000/contacts', {
+                const res = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/contacts', {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -52,7 +52,7 @@ function Contacts () {
         if (name && phone && succes) {
             
             ;(async () => {
-                const res = await fetch('http://localhost:5000/contacts', {
+                const res = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/contacts', {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'

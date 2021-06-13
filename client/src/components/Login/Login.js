@@ -24,7 +24,7 @@ function Login() {
         if (submit && username && password) {
 
             ;(async () => {
-                const response = await fetch('http://localhost:5000/login', {
+                const response = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/login', {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
