@@ -52,14 +52,14 @@ function Login() {
 
     if (path === '/') {
         return <Redirect to='/' />
-    } else if (path === '/signup') {
-        return <Redirect to ={'/signup'} />
+    } else if (path === '/signupp') {
+        return <Redirect to ={'/signupp'} />
     }
 
     return (
         <>
             <button onClick={() => setPathname('/')} >Home</button>
-            <button onClick={() => setPathname('/signup')}>Sign up</button>
+            <button onClick={() => setPathname('/signupp')}>Sign up</button>
             <h1 className='title'>Do you want to save your contacts?</h1>
             <div className='container-form'>
                     {err}
