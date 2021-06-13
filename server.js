@@ -72,6 +72,7 @@ const FIND_USER_CONTACTS = `
 
 app.get('/signup', async (req, res) => {
     res.send(await pg(SQL))
+    res.send('hello')
 })
 
 
