@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-wrapper {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  background: none;
+  border: none;
+  width: 300px;
+  padding: 30px;
+  font-size: 24px;
+  background-color: rgb(131, 175, 64);
+  cursor: pointer;
+}
+
+.rrr {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.title {
+  text-align: center; 
+  font-size: 60px;
+}
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.forma {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-edit {
+  padding-left: 40px;
+
+}
+
+.form-contact {
+  display: flex;
+}
+
+.form-contact div {
+  margin-right: 15px;
+}
+
+.sss {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ddd {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 150px;
+  margin: 45px;
+  background-color: #eee;
+}
+
+.ddd span {
+  display: block;
+  width: 100%;
+}
