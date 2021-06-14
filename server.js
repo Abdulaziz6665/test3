@@ -66,12 +66,12 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
-app.get('/signup', async (req, res) => {
-    res.send(await pg(SQL))
+app.get('/signupp', async (req, res) => {
+    res.send("hello heroku")
 })
 
 
-app.post('/signupp', async (req, res) => {
+app.post('/signup', async (req, res) => {
     const { username, password } = req.body
     
     try {

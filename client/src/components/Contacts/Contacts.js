@@ -4,7 +4,7 @@ import { useData } from '../Context/Context'
 
 function Contacts () {
 
-    const [data, setData, host] = useData()
+    const [data, setData] = useData()
 
     const [info, setInfo] = useState()
 
@@ -37,7 +37,7 @@ function Contacts () {
             })()
         }
 
-    }, [data, setInfo, host])
+    }, [data, setInfo])
 
     useEffect(() => {
         
@@ -74,7 +74,7 @@ function Contacts () {
             setPhone(null)
             setEmail(null)
         }
-    }, [data, name, phone, email, succes, host])
+    }, [data, name, phone, email, succes])
 
     if (path === '/') {
         window.localStorage.removeItem('data')

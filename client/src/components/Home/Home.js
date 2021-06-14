@@ -5,8 +5,8 @@ function Home () {
 
     const [path, setPath] = useState(null)
 
-    if (path === '/signupp') {
-       return <Redirect to={'/signupp'}/>
+    if (path === '/signup') {
+       return <Redirect to={'/signup'}/>
     }
     if (path === '/login') {
         return <Redirect to={'/login'}/>
@@ -17,7 +17,7 @@ function Home () {
             <h1 className='title'>Do you want to save your contacts?</h1>
             <div className='btn-wrapper'>
                 <div className='rrr'>
-                    <button onClick={() => setPath('/signupp')} className='btn'>
+                    <button onClick={() => setPath('/signup')} className='btn'>
                         Sign up
                     </button>
                 </div>

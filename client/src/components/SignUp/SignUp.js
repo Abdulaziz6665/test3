@@ -5,7 +5,7 @@ import { useData } from '../Context/Context'
 
 function SignUp() {
 
-    const [data, setData, host] = useData()
+    const [data, setData] = useData()
 
     const usernameRef = useRef('')
     const passwordRef = useRef('')
@@ -26,7 +26,7 @@ function SignUp() {
         if (submit && username && password) {
 
             ;(async () => {
-                const res = await fetch(`/signupp`, {
+                const res = await fetch(`/signup`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -46,7 +46,7 @@ function SignUp() {
             setSubmit(false)
         }
 
-    }, [submit, username, password, setErr, setData, host])
+    }, [submit, username, password, setErr, setData])
 
     if (succes && data) {
         return <Redirect to={'/contacts'}/>

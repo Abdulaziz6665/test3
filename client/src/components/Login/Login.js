@@ -5,7 +5,7 @@ import { useData } from '../Context/Context'
 
 function Login() {
 
-    const [data, setData, host] = useData()
+    const [data, setData] = useData()
 
     const usernameRef = useRef('')
     const passwordRef = useRef('')
@@ -44,7 +44,7 @@ function Login() {
             setSubmit(false)
         }
 
-    }, [submit, username, password, setErr, setData, host])
+    }, [submit, username, password, setErr, setData])
 
     if (succes && data) {
         return<Redirect  to='/contacts'/>
@@ -52,14 +52,14 @@ function Login() {
 
     if (path === '/') {
         return <Redirect to='/' />
-    } else if (path === '/signupp') {
-        return <Redirect to ={'/signupp'} />
+    } else if (path === '/signup') {
+        return <Redirect to ={'/signup'} />
     }
 
     return (
         <>
             <button onClick={() => setPathname('/')} >Home</button>
-            <button onClick={() => setPathname('/signupp')}>Sign up</button>
+            <button onClick={() => setPathname('/signup')}>Sign up</button>
             <h1 className='title'>Do you want to save your contacts?</h1>
             <div className='container-form'>
                     {err}
