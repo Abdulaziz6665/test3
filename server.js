@@ -1,5 +1,6 @@
 const express = require('express')
 const { pg } = require('./pg/pg')
+// const https = require('https')
 const bodyParser = require('body-parser')
 const path = require('path')
 
@@ -63,11 +64,10 @@ const FIND_USER_CONTACTS = `
 
 app.get('/signup', async (req, res) => {
     res.send(await pg(SQL))
-    res.send('hello')
 })
 
 
-app.post('/signup', async (req, res) => {
+app.post('/signupp', async (req, res) => {
     const { username, password } = req.body
     
     try {

@@ -14,8 +14,12 @@ function Provider ({children}) {
 }
 
 function useData () {
+
+    // const host = 'http://ec2-3-218-71-191.compute-1.amazonaws.com'
+    const host = 'http://localhost:5000'
     const { data, setData } = useContext(context)
-    return [data, setData]
+
+    return [data, setData, host]
 }
 
 

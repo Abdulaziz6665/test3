@@ -5,7 +5,7 @@ import { useData } from '../Context/Context'
 
 function SignUp() {
 
-    const [data, setData] = useData()
+    const [data, setData, host] = useData()
 
     const usernameRef = useRef('')
     const passwordRef = useRef('')
@@ -26,7 +26,7 @@ function SignUp() {
         if (submit && username && password) {
 
             ;(async () => {
-                const res = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/signup', {
+                const res = await fetch(`${host}/signupp`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -46,7 +46,7 @@ function SignUp() {
             setSubmit(false)
         }
 
-    }, [submit, username, password, setErr, setData])
+    }, [submit, username, password, setErr, setData, host])
 
     if (succes && data) {
         return <Redirect to={'/contacts'}/>

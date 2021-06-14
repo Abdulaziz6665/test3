@@ -4,7 +4,7 @@ import { useData } from '../Context/Context'
 
 function Contacts () {
 
-    const [data, setData] = useData()
+    const [data, setData, host] = useData()
 
     const [info, setInfo] = useState()
 
@@ -22,7 +22,7 @@ function Contacts () {
 
             ;(async () => {
     
-                const res = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/contacts', {
+                const res = await fetch(`${host}/contacts`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -37,7 +37,7 @@ function Contacts () {
             })()
         }
 
-    }, [data, setInfo])
+    }, [data, setInfo, host])
 
     useEffect(() => {
         
@@ -52,7 +52,7 @@ function Contacts () {
         if (name && phone && succes) {
             
             ;(async () => {
-                const res = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/contacts', {
+                const res = await fetch(`${host}/contacts`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -74,7 +74,7 @@ function Contacts () {
             setPhone(null)
             setEmail(null)
         }
-    }, [data, name, phone, email, succes])
+    }, [data, name, phone, email, succes, host])
 
     if (path === '/') {
         window.localStorage.removeItem('data')

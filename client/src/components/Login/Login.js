@@ -5,7 +5,7 @@ import { useData } from '../Context/Context'
 
 function Login() {
 
-    const [data, setData] = useData()
+    const [data, setData, host] = useData()
 
     const usernameRef = useRef('')
     const passwordRef = useRef('')
@@ -24,7 +24,7 @@ function Login() {
         if (submit && username && password) {
 
             ;(async () => {
-                const response = await fetch('https://ec2-3-218-71-191.compute-1.amazonaws.com/login', {
+                const response = await fetch(`${host}/login`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -44,7 +44,7 @@ function Login() {
             setSubmit(false)
         }
 
-    }, [submit, username, password, setErr, setData])
+    }, [submit, username, password, setErr, setData, host])
 
     if (succes && data) {
         return<Redirect  to='/contacts'/>
