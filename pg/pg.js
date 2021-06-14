@@ -1,5 +1,4 @@
 const { Pool } = require('pg')
-
 // const pool = new Pool({
 //     host: 'ec2-3-218-71-191.compute-1.amazonaws.com',
 //     database: 'd29uf3s5qjb5c6',
@@ -7,6 +6,9 @@ const { Pool } = require('pg')
 //     password: '767130f43e85199e4e949deb8f231cb3c8c8438514120a18bd9a17d91a009163',
 //     port: 5432
 // })
+
+// aaa
+
 const host = {
     host: 'localhost',
     database: 'contacts',
