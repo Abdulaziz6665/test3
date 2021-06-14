@@ -22,7 +22,7 @@ function Contacts () {
 
             ;(async () => {
     
-                const res = await fetch(`${host}/contacts`, {
+                const res = await fetch(`/contacts`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
@@ -52,7 +52,7 @@ function Contacts () {
         if (name && phone && succes) {
             
             ;(async () => {
-                const res = await fetch(`${host}/contacts`, {
+                const res = await fetch(`/contacts`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'

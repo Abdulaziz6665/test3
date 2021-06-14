@@ -24,7 +24,7 @@ function Login() {
         if (submit && username && password) {
 
             ;(async () => {
-                const response = await fetch(`${host}/login`, {
+                const response = await fetch(`/login`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'

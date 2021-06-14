@@ -26,7 +26,7 @@ function SignUp() {
         if (submit && username && password) {
 
             ;(async () => {
-                const res = await fetch(`${host}/signupp`, {
+                const res = await fetch(`/signupp`, {
                     method: 'post',
                     headers: {
                         'Content-type': 'application/json'
