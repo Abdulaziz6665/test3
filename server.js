@@ -67,7 +67,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/signupp', async (req, res) => {
-    res.send("hello heroku")
+    res.send(await pg(SQL))
 })
 
 
