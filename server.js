@@ -114,7 +114,7 @@ app.post('/contacts', async (req, res) => {
 
 // Handle React routing, return all requests to React app
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 app.listen(PORT, () => console.log('server is running ' + PORT))
