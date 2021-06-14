@@ -18,10 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use((req, res, next) => {
 //     res.sendFile(path.join(__dirname, '../client-side', 'build', 'index.html'))
 // })
-if (process.env.NODE_ENV === 'production') {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, 'client/build')));
-}
 
 const SQL = `
     select
@@ -64,6 +60,11 @@ const FIND_USER_CONTACTS = `
     join users as u on $1 = c.contacts_id
     order by c.user_username
 `
+
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+}
 
 app.get('/signup', async (req, res) => {
     res.send(await pg(SQL))

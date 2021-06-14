@@ -7,14 +7,21 @@ const { Pool } = require('pg')
 //     password: '767130f43e85199e4e949deb8f231cb3c8c8438514120a18bd9a17d91a009163',
 //     port: 5432
 // })
-
-const pool = new Pool({
+const host = {
     host: 'localhost',
     database: 'contacts',
     user: 'postgres',
     password: '6665',
     port: 5432
+}
+const devConfig = `postgresql://${host.user}:${host.password}@${host.host}:${host.port}/${host.database}`
+
+const proConfig = process.env.DATABASE_URL
+
+const pool = new Pool({
+    connectionString: process.env.NODE_ENV === 'production' ? proConfig : devConfig
 })
+
 
 const pg = async (SQL, ...params) => {
     const client = await pool.connect()
